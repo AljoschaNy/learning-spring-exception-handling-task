@@ -12,4 +12,10 @@ public class GlobalExceptionHandler {
     public ErrorMessage handleIllegalArgumentException(IllegalArgumentException exception) {
         return new ErrorMessage(exception.getMessage());
     }
+
+    @ExceptionHandler(Exception.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ErrorMessage handleAnyUnknownException(Exception exception) {
+        return new ErrorMessage("An error occurred: " + exception.getMessage());
+    }
 }
