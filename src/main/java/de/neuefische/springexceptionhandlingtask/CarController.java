@@ -16,11 +16,6 @@ public class CarController {
         return brand;
     }
 
-    @ExceptionHandler(IllegalArgumentException.class)
-    public ErrorMessage handleIllegalArgumentException(IllegalArgumentException exception) {
-        return new ErrorMessage(exception.getMessage());
-    }
-
     @GetMapping
     String getAllCars() {
         throw new NoSuchElementException("No Cars found");

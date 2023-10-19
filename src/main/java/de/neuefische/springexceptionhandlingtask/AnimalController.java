@@ -16,11 +16,6 @@ public class AnimalController {
         return species;
     }
 
-    @ExceptionHandler(IllegalArgumentException.class)
-    public ErrorMessage handleIllegalArgumentException(IllegalArgumentException exception) {
-        return new ErrorMessage(exception.getMessage());
-    }
-
     @GetMapping
     String getAllAnimals() {
         throw new NoSuchElementException("No Animals found");
