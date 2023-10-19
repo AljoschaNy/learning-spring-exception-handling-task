@@ -17,8 +17,8 @@ public class AnimalController {
     }
 
     @ExceptionHandler(IllegalArgumentException.class)
-    public IllegalArgumentException handleIllegalArgumentException(IllegalArgumentException exception) {
-        return new IllegalArgumentException(exception.getMessage());
+    public ErrorMessage handleIllegalArgumentException(IllegalArgumentException exception) {
+        return new ErrorMessage(exception.getMessage());
     }
 
     @GetMapping
